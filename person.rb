@@ -20,6 +20,3 @@ class Person
     @age > 18
   end
 end
-
-p1 = Person.new(30, 'John')
-puts p1.can_use_services?
