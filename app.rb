@@ -3,8 +3,11 @@ require_relative 'student'
 require_relative 'teacher'
 require_relative 'person'
 require_relative 'rental'
+require_relative 'list_item'
 
 class App
+  include ListItem
+
   def initialize
     @book = []
     @rentals = []
@@ -52,30 +55,6 @@ class App
     puts 'Enter number'
     input = gets.chomp
     run_choise(input)
-  end
-
-  # list book
-  def list_books
-    puts 'The Library is empty ,There is no books added yet!' if @book.length.zero?
-
-    @book.each do |book|
-      puts "#{@book.index(book)}) Title: \"#{book.title}\", Author: #{book.author}"
-    end
-
-    puts ''
-    run
-  end
-
-  # list people
-  def list_people
-    puts 'There is person in the list!' if @book.length.zero?
-
-    @people.each do |person|
-      puts "Name: #{person.name}  Age: #{person.age}"
-    end
-
-    puts ''
-    run
   end
 
   #   Create person
@@ -179,21 +158,6 @@ class App
 
     new_rental = Rental.new(rental_date, selected_book, selected_person)
     @rentals << new_rental
-    run
-  end
-
-  def list_of_rentals
-    print('ID of person: ')
-    id = gets.chomp.to_i
-    puts('Rentals')
-    puts('')
-
-    puts 'There is no rentals' if @rentals.length.zero?
-
-    @rentals.each do |i|
-      puts "Date: #{i.date}, Book \"#{i.book.title}\" by #{i.book.author}" if i.person.id == id
-    end
-
     run
   end
 end
