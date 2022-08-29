@@ -37,7 +37,7 @@ module CreateItems
     end
 
     new_student(age, name, parent_permission)
-   
+
     puts('Student person created successfully!')
   end
 
@@ -78,7 +78,7 @@ module CreateItems
     author = gets.chomp
 
     new_book(title, author)
-    
+
     puts('Book created successfully')
     run
   end
@@ -110,9 +110,8 @@ module CreateItems
     rental_date = gets.chomp
 
     new_rental(rental_date, selected_book, selected_person)
-
-    
   end
+
   def new_rental(rental_date, selected_book, selected_person)
     new_rental = Rental.new(rental_date, selected_book, selected_person)
     @rentals << new_rental
