@@ -6,12 +6,19 @@
 
 - `Ruby`
 
-## Author
+## Author1
 
 👤 **Yohannes Dagnachew**
 
 - GitHub: [@githubhandle](https://github.com/yohannesdagnachew/)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/yohannesdagnachew/)
+
+## Author1
+
+👤 **Natnael Demelash**
+
+- GitHub: [@githubhandle](https://github.com/NatiDeme)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/natnael-demelash/)
 
 ## Setup
 
