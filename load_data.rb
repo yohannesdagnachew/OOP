@@ -24,6 +24,6 @@ module LoadData
   def load_rentals
     saved_rentals = open('./rentals.json')
     save = saved_rentals.read
-    rent = JSON.parse(save)
+    JSON.parse(save)
   end
 end

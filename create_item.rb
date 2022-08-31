@@ -82,7 +82,7 @@ module CreateItems
 
     puts 'Author:'
     author = gets.chomp
-    
+
     new_book(title, author)
     puts('Book created successfully')
     run

@@ -34,7 +34,7 @@ module ListItem
     puts 'There is no rentals' if @rentals.length.zero?
 
     @rentals.each do |i|
-      puts "Date: #{i['date']}, Book \"#{i['book_title']}\" by #{i['person_name']}"
+      puts "Date: #{i['date']}, Book \"#{i['book_title']}\" by #{i['person_name']}" if i['person_id'] == id
     end
 
     run
