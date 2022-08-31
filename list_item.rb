@@ -1,4 +1,8 @@
+require_relative 'load_data'
+
 module ListItem
+  include LoadData
+
   def list_books
     puts 'The Library is empty ,There is no books added yet!' if @book.length.zero?
 
@@ -14,7 +18,7 @@ module ListItem
     puts 'There is person in the list!' if @book.length.zero?
 
     @people.each do |person|
-      puts "Name: #{person.name}  Age: #{person.age} ID:#{person.id}"
+      puts "Name: #{person.name}  Age: #{person.age} ID:#{person.id} "
     end
 
     puts ''
@@ -30,7 +34,7 @@ module ListItem
     puts 'There is no rentals' if @rentals.length.zero?
 
     @rentals.each do |i|
-      puts "Date: #{i.date}, Book \"#{i.book.title}\" by #{i.book.author}" if i.person.id == id
+      puts "Date: #{i['date']}, Book \"#{i['book_title']}\" by #{i['person_name']}" if i['person_id'] == id
     end
 
     run

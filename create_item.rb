@@ -1,4 +1,8 @@
+require_relative 'save_data'
+
 module CreateItems
+  include SaveAll
+
   #   Create person
   def create_people
     puts 'Do you want to create a student (1) or a teacher (2) ? [Input the number]:'
@@ -44,6 +48,8 @@ module CreateItems
   def new_student(age, name, parent_permission)
     new_student = Student.new(age, name, parent_permission)
     @people << new_student
+
+    save_people(@people)
     run
   end
 
@@ -78,7 +84,6 @@ module CreateItems
     author = gets.chomp
 
     new_book(title, author)
-
     puts('Book created successfully')
     run
   end
@@ -114,7 +119,10 @@ module CreateItems
 
   def new_rental(rental_date, selected_book, selected_person)
     new_rental = Rental.new(rental_date, selected_book, selected_person)
-    @rentals << new_rental
+    @rentals << { 'date' => new_rental.date,
+                  'person_name' => new_rental.person.name,
+                  'book_title' => new_rental.book.title, 'person_id' => new_rental.person.id }
+    save_rentals(@rentals)
     run
   end
 end
