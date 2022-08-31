@@ -13,7 +13,7 @@
 - GitHub: [@githubhandle](https://github.com/yohannesdagnachew/)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/yohannesdagnachew/)
 
-## Author1
+## Author2
 
 👤 **Natnael Demelash**
 

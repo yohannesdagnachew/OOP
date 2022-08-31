@@ -5,15 +5,16 @@ require_relative 'person'
 require_relative 'rental'
 require_relative 'list_item'
 require_relative 'create_item'
+require 'json'
 
 class App
   include CreateItems
   include ListItem
 
   def initialize
-    @book = []
-    @rentals = []
-    @people = []
+    @book = load_book
+    @rentals = load_rentals
+    @people = load_person
   end
 
   def options
