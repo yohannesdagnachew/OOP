@@ -33,3 +33,31 @@ describe Student do
     expect(student.play_hooky).to eq '¯\(ツ)/¯'
   end
 end
+
+describe Teacher do
+  teacher = Teacher.new('Math', 58, 'Big')
+  it `test person can use service` do
+    expect(teacher.can_use_services?).to be true
+  end
+
+  it `test title ` do
+    expect(teacher.specialization).to include 'Math'
+  end
+end
+
+describe Classroom do
+  classroom = Classroom.new('Math')
+  it `test label` do
+    expect(classroom.label).to include 'Math'
+  end
+end
+
+describe Rental do
+  person = Student.new 10, 'Bahlu', true
+  book = Book.new 'Hello', 'World'
+  rental = Rental.new('22', book, person)
+
+  it `test label` do
+    expect(rental.date).to include '22'
+  end
+end
