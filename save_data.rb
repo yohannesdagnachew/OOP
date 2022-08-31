@@ -18,12 +18,6 @@ module SaveAll
   end
 
   def save_rentals(rentals)
-    rentals_to_save = []
-    rentals.each do |rental|
-      rentals_to_save << { 'date' => rental.date,
-                           'person_name' => rental.person.name,
-                           'book_title' => rental.book.title, 'person_id' => rental.person.id }
-    end
-    File.write('./rentals.json', JSON.generate(rentals_to_save))
+    File.write('./rentals.json', JSON.generate(rentals))
   end
 end

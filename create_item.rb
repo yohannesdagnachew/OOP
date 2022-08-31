@@ -119,7 +119,9 @@ module CreateItems
 
   def new_rental(rental_date, selected_book, selected_person)
     new_rental = Rental.new(rental_date, selected_book, selected_person)
-    @rentals << new_rental
+    @rentals << { 'date' => new_rental.date,
+      'person_name' => new_rental.person.name,
+      'book_title' => new_rental.book.title, 'person_id' => new_rental.person.id }
     save_rentals(@rentals)
     run
   end
