@@ -40,12 +40,17 @@ module CreateItems
       puts('please enter [Y/N]: ')
     end
 
-    new_student = Student.new(age, name, parent_permission)
-    @people << new_student
-    save_people(@people)
-    run
+    new_student(age, name, parent_permission)
 
     puts('Student person created successfully!')
+  end
+
+  def new_student(age, name, parent_permission)
+    new_student = Student.new(age, name, parent_permission)
+    @people << new_student
+
+    save_people(@people)
+    run
   end
 
   # create teacher
@@ -59,11 +64,15 @@ module CreateItems
     print 'Specialization: '
     specialization = gets.chomp
 
-    new_teacher = Teacher.new(specialization, age, name)
-    @people << new_teacher
-    save_people(@people)
+    new_teacher(specialization, age, name)
+
     puts('Teacher person created successfully!')
     run
+  end
+
+  def new_teacher(specialization, age, name)
+    new_teacher = Teacher.new(specialization, age, name)
+    @people << new_teacher
   end
 
   # create book
@@ -73,13 +82,15 @@ module CreateItems
 
     puts 'Author:'
     author = gets.chomp
-
-    new_book = Book.new(title, author)
-    @book << new_book
-    save_book(@book)
-
+    
+    new_book(title, author)
     puts('Book created successfully')
     run
+  end
+
+  def new_book(title, author)
+    new_book = Book.new(title, author)
+    @book << new_book
   end
 
   # create rental
@@ -103,6 +114,10 @@ module CreateItems
     print('Date: ')
     rental_date = gets.chomp
 
+    new_rental(rental_date, selected_book, selected_person)
+  end
+
+  def new_rental(rental_date, selected_book, selected_person)
     new_rental = Rental.new(rental_date, selected_book, selected_person)
     @rentals << new_rental
     save_rentals(@rentals)
