@@ -4,7 +4,7 @@ require_relative 'capitalize'
 require_relative 'trim'
 require_relative 'person'
 
-person = Person.new(22, 'maximilianus')
+person = Person.new(22, 'maximilianus', false)
 puts person.correct_name
 capitalized_person = CapitalizeDecorator.new(person)
 puts capitalized_person.correct_name
